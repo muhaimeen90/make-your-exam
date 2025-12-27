@@ -1,6 +1,6 @@
 # makeyourexam
 
-A powerful tool to forge exams from PDF documents using AI.
+A website to make your own test papers from PDF documents using the help of LLM.
 
 ## Quick Start
 
