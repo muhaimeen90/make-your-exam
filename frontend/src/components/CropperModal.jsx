@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import ReactCrop, { centerCrop, makeAspectCrop } from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 import { X, Check, Scissors } from 'lucide-react';
@@ -69,9 +70,9 @@ const CropperModal = ({ imageUrl, isOpen, onClose, onConfirm }) => {
 
     if (!isOpen) return null;
 
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-            <div className="bg-white max-w-4xl w-full max-h-[90vh] flex flex-col border-thick shadow-hard-lg overflow-hidden animate-in fade-in zoom-in duration-200">
+    return ReactDOM.createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+            <div className="bg-white max-w-4xl w-full max-h-[90vh] flex flex-col border-thick shadow-hard-lg overflow-hidden">
 
                 {/* Header */}
                 <div className="p-4 bg-[var(--memphis-yellow)] border-b-2 border-black flex justify-between items-center">
@@ -120,7 +121,8 @@ const CropperModal = ({ imageUrl, isOpen, onClose, onConfirm }) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

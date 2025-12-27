@@ -31,7 +31,7 @@ const PageApprover = ({ imageUrl, pageNumber, questionInfo, onApprove }) => {
                     />
 
                     {/* Overlay on Hover */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 gap-2">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 gap-2">
                         <button
                             onClick={() => setIsCropperOpen(true)}
                             className="btn-primary flex items-center gap-2 scale-90 group-hover:scale-100 transition-transform px-3"

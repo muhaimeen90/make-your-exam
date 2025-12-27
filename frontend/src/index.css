@@ -65,3 +65,11 @@ body {
 .btn-accent:active {
     @apply shadow-none translate-x-[2px] translate-y-[2px];
 }
+
+.btn-primary {
+    @apply bg-white text-black font-bold uppercase tracking-wider hover:bg-[var(--memphis-teal)] transition-colors border-2 border-black shadow-hard flex items-center justify-center py-2 px-4;
+}
+
+.btn-primary:active {
+    @apply shadow-none translate-x-[2px] translate-y-[2px];
+}

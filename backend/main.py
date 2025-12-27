@@ -10,7 +10,7 @@ from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 import shutil
 import uuid
 import fitz # PyMuPDF
@@ -50,7 +50,7 @@ class SearchQuery(BaseModel):
 class PageSelection(BaseModel):
     source_pdf: str  # Filename in UPLOAD_DIR
     page_number: int # 0-indexed
-    crop_box: List[float] = None # [x, y, w, h] normalized (0-1)
+    crop_box: Optional[List[float]] = None # [x, y, w, h] normalized (0-1)
 
 class GenerateRequest(BaseModel):
     selections: List[PageSelection]
