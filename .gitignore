@@ -1,5 +1,7 @@
 # Environment variables
 .env
+.env.production
+.env.local
 
 # Python
 __pycache__/
@@ -27,3 +29,16 @@ npm-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# SSL Certificates (if added later)
+*.pem
+*.key
+*.crt
+*.csr
+ssl/
+certs/
+
+# Backups
+*.tar.gz
+*.zip
+backup/
